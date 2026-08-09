@@ -1,0 +1,503 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Nasir Arafat — Big Data Engineer &amp; Data Architect</title>
+<meta name="description" content="Big Data Engineer | Data Architect | Data Governance | Data & AI Mentor | British Council GREAT Scholar">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;500;600;700&family=Inter:wght@400;500;600&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
+<style>
+  :root{
+    --ink:#0B1220;
+    --panel:#111B2E;
+    --panel-2:#0E1626;
+    --line:#233047;
+    --cyan:#4FD1C5;
+    --amber:#F2A65A;
+    --text:#E8ECF1;
+    --muted:#8B96A8;
+    --radius:10px;
+  }
+  *{box-sizing:border-box; margin:0; padding:0;}
+  html{scroll-behavior:smooth;}
+  body{
+    background:var(--ink);
+    color:var(--text);
+    font-family:'Inter', sans-serif;
+    line-height:1.6;
+    -webkit-font-smoothing:antialiased;
+  }
+  h1,h2,h3,h4{font-family:'Space Grotesk', sans-serif; font-weight:600; letter-spacing:-0.01em;}
+  .mono{font-family:'JetBrains Mono', monospace;}
+  a{color:inherit; text-decoration:none;}
+  img{max-width:100%; display:block;}
+  ::selection{background:var(--cyan); color:var(--ink);}
+
+  .wrap{max-width:1040px; margin:0 auto; padding:0 28px;}
+  section{padding:96px 0;}
+  @media (max-width:640px){ section{padding:64px 0;} }
+
+  /* ---------- NAV ---------- */
+  nav{
+    position:sticky; top:0; z-index:50;
+    background:rgba(11,18,32,0.85); backdrop-filter:blur(10px);
+    border-bottom:1px solid var(--line);
+  }
+  nav .wrap{display:flex; align-items:center; justify-content:space-between; padding:16px 28px;}
+  .nav-logo{font-family:'JetBrains Mono', monospace; font-size:14px; color:var(--cyan); letter-spacing:0.02em;}
+  .nav-links{display:flex; gap:28px; font-size:14px; color:var(--muted);}
+  .nav-links a:hover{color:var(--text);}
+  @media (max-width:640px){ .nav-links{display:none;} }
+
+  /* ---------- HERO ---------- */
+  .hero{
+    padding:120px 0 100px;
+    position:relative;
+    overflow:hidden;
+    border-bottom:1px solid var(--line);
+  }
+  .hero-eyebrow{
+    font-family:'JetBrains Mono', monospace; font-size:13px; color:var(--cyan);
+    text-transform:uppercase; letter-spacing:0.12em; margin-bottom:18px;
+    display:flex; align-items:center; gap:10px;
+  }
+  .hero-eyebrow::before{content:''; width:8px; height:8px; border-radius:50%; background:var(--cyan); box-shadow:0 0 12px var(--cyan); animation:pulse 2s infinite;}
+  @keyframes pulse{0%,100%{opacity:1;} 50%{opacity:0.4;}}
+  .hero h1{font-size:clamp(2.4rem, 6vw, 4rem); line-height:1.05; margin-bottom:20px;}
+  .hero .role{font-size:clamp(1.05rem, 2vw, 1.3rem); color:var(--muted); max-width:620px; margin-bottom:36px;}
+  .role .sep{color:var(--amber); margin:0 8px;}
+  .cta-row{display:flex; gap:16px; flex-wrap:wrap;}
+  .btn{
+    font-family:'JetBrains Mono', monospace; font-size:13px; padding:13px 24px;
+    border-radius:6px; display:inline-flex; align-items:center; gap:8px;
+    transition:transform .15s ease, box-shadow .15s ease; letter-spacing:0.02em;
+  }
+  .btn-primary{background:var(--cyan); color:var(--ink); font-weight:500;}
+  .btn-primary:hover{transform:translateY(-2px); box-shadow:0 8px 24px -8px rgba(79,209,197,0.5);}
+  .btn-ghost{border:1px solid var(--line); color:var(--text);}
+  .btn-ghost:hover{border-color:var(--cyan); color:var(--cyan);}
+
+  /* pipeline decoration in hero */
+  .hero-flow{
+    margin-top:64px; display:flex; align-items:center; gap:0;
+    font-family:'JetBrains Mono', monospace; font-size:12px; color:var(--muted);
+    flex-wrap:wrap;
+  }
+  .flow-node{border:1px solid var(--line); padding:8px 14px; border-radius:20px; white-space:nowrap;}
+  .flow-line{width:36px; height:1px; background:linear-gradient(90deg, var(--line), var(--cyan)); position:relative;}
+  @media (max-width:640px){ .flow-line{display:none;} }
+
+  /* ---------- SECTION HEADERS ---------- */
+  .sec-head{margin-bottom:44px;}
+  .sec-num{font-family:'JetBrains Mono', monospace; font-size:12px; color:var(--amber); letter-spacing:0.1em; text-transform:uppercase; margin-bottom:10px; display:block;}
+  .sec-head h2{font-size:clamp(1.5rem, 3vw, 2.1rem);}
+
+  /* ---------- SUMMARY ---------- */
+  .summary p{color:var(--muted); font-size:1.05rem; max-width:760px; margin-bottom:18px;}
+  .summary strong{color:var(--text); font-weight:500;}
+  .contact-card{
+    margin-top:36px; background:var(--panel); border:1px solid var(--line);
+    border-radius:var(--radius); padding:24px 28px; display:flex; gap:40px; flex-wrap:wrap;
+  }
+  .contact-item .label{font-family:'JetBrains Mono', monospace; font-size:11px; color:var(--muted); text-transform:uppercase; letter-spacing:0.08em; margin-bottom:6px;}
+  .contact-item .value{font-size:15px;}
+
+  /* ---------- EXPERTISE GRID ---------- */
+  .expertise-grid{display:grid; grid-template-columns:repeat(2, 1fr); gap:1px; background:var(--line); border:1px solid var(--line); border-radius:var(--radius); overflow:hidden;}
+  @media (max-width:640px){ .expertise-grid{grid-template-columns:1fr;} }
+  .expertise-cell{background:var(--panel); padding:26px 28px;}
+  .expertise-cell h3{font-size:15px; color:var(--cyan); margin-bottom:10px;}
+  .expertise-cell p{color:var(--muted); font-size:14px;}
+
+  /* ---------- PIPELINE / EXPERIENCE ---------- */
+  .pipeline{position:relative; padding-left:32px;}
+  .pipeline::before{
+    content:''; position:absolute; left:5px; top:6px; bottom:6px; width:2px;
+    background:linear-gradient(180deg, var(--cyan), var(--line) 90%);
+  }
+  .pipe-role{position:relative; margin-bottom:56px;}
+  .pipe-role:last-child{margin-bottom:0;}
+  .pipe-role::before{
+    content:''; position:absolute; left:-32px; top:4px; width:12px; height:12px;
+    border-radius:50%; background:var(--ink); border:2px solid var(--cyan);
+  }
+  .pipe-dates{font-family:'JetBrains Mono', monospace; font-size:12px; color:var(--amber); margin-bottom:6px; text-transform:uppercase; letter-spacing:0.04em;}
+  .pipe-role h3{font-size:1.15rem; margin-bottom:4px;}
+  .pipe-role .subrole{color:var(--muted); font-size:14px; margin-bottom:14px;}
+  .pipe-role ul{list-style:none; padding:0;}
+  .pipe-role li{position:relative; padding-left:18px; color:var(--muted); font-size:14.5px; margin-bottom:8px;}
+  .pipe-role li::before{content:'—'; position:absolute; left:0; color:var(--line);}
+  .company-tag{display:inline-block; font-family:'JetBrains Mono', monospace; font-size:12px; color:var(--cyan); border:1px solid var(--line); border-radius:20px; padding:5px 14px; margin-bottom:28px;}
+
+  .achv-grid{margin-top:28px; display:grid; grid-template-columns:repeat(3,1fr); gap:14px;}
+  @media (max-width:768px){ .achv-grid{grid-template-columns:repeat(2,1fr);} }
+  @media (max-width:480px){ .achv-grid{grid-template-columns:1fr;} }
+  .achv-card{background:var(--panel); border:1px solid var(--line); border-radius:var(--radius); padding:18px 20px;}
+  .achv-card h4{font-size:13.5px; color:var(--text); margin-bottom:6px;}
+  .achv-card p{font-size:13px; color:var(--muted);}
+
+  /* ---------- SPEAKING GALLERY ---------- */
+  .gallery{display:grid; grid-template-columns:repeat(3, 1fr); gap:16px;}
+  @media (max-width:768px){ .gallery{grid-template-columns:repeat(2,1fr);} }
+  @media (max-width:480px){ .gallery{grid-template-columns:1fr;} }
+  .gal-item{border-radius:var(--radius); overflow:hidden; border:1px solid var(--line); background:var(--panel);}
+  .gal-item img{aspect-ratio:4/3; object-fit:cover; width:100%;}
+  .gal-cap{padding:14px 16px; font-size:13px; color:var(--muted);}
+
+  /* ---------- CAREER TIMELINE (horizontal-ish) ---------- */
+  .timeline{display:flex; flex-direction:column; gap:0;}
+  .tl-item{display:grid; grid-template-columns:140px 1fr; gap:24px; padding:20px 0; border-bottom:1px solid var(--line);}
+  .tl-item:first-child{padding-top:0;}
+  .tl-item:last-child{border-bottom:none;}
+  @media (max-width:560px){ .tl-item{grid-template-columns:1fr;} }
+  .tl-year{font-family:'JetBrains Mono', monospace; color:var(--amber); font-size:13px;}
+  .tl-item h4{font-size:15px; margin-bottom:4px;}
+  .tl-item p{color:var(--muted); font-size:14px;}
+
+  /* ---------- EDUCATION / CERTS ---------- */
+  .card-list{display:flex; flex-direction:column; gap:14px;}
+  .edu-card{background:var(--panel); border:1px solid var(--line); border-radius:var(--radius); padding:24px 28px; display:flex; justify-content:space-between; align-items:flex-start; gap:20px; flex-wrap:wrap;}
+  .edu-card h3{font-size:16px; margin-bottom:4px;}
+  .edu-card .deg{color:var(--cyan); font-size:14px; margin-bottom:4px;}
+  .edu-card .field{color:var(--muted); font-size:13.5px;}
+  .edu-card .yr{font-family:'JetBrains Mono', monospace; font-size:12px; color:var(--muted); white-space:nowrap;}
+
+  .cert-grid{display:grid; grid-template-columns:repeat(2, 1fr); gap:14px;}
+  @media (max-width:640px){ .cert-grid{grid-template-columns:1fr;} }
+  .cert-card{background:var(--panel); border:1px solid var(--line); border-radius:var(--radius); padding:20px 22px;}
+  .cert-card h4{font-size:14.5px; margin-bottom:6px;}
+  .cert-card p{font-size:13px; color:var(--muted);}
+
+  .honor-list{display:flex; flex-direction:column; gap:0;}
+  .honor-item{display:flex; gap:18px; padding:18px 0; border-bottom:1px solid var(--line); align-items:baseline;}
+  .honor-item:last-child{border-bottom:none;}
+  .honor-mark{font-family:'JetBrains Mono', monospace; color:var(--cyan); font-size:12px; flex-shrink:0;}
+  .honor-item h4{font-size:14.5px; margin-bottom:3px;}
+  .honor-item p{font-size:13px; color:var(--muted);}
+
+  /* ---------- FOOTER ---------- */
+  footer{border-top:1px solid var(--line); padding:64px 0 40px;}
+  .footer-cta h2{font-size:clamp(1.6rem, 4vw, 2.4rem); margin-bottom:18px;}
+  .footer-cta p{color:var(--muted); max-width:520px; margin-bottom:32px;}
+  .footer-bottom{margin-top:64px; padding-top:24px; border-top:1px solid var(--line); display:flex; justify-content:space-between; flex-wrap:wrap; gap:12px; font-size:12.5px; color:var(--muted); font-family:'JetBrains Mono', monospace;}
+
+  @media (prefers-reduced-motion: reduce){
+    *{animation:none !important; transition:none !important;}
+  }
+</style>
+</head>
+<body>
+
+<nav>
+  <div class="wrap">
+    <div class="nav-logo">nasir.arafat()</div>
+    <div class="nav-links">
+      <a href="#summary">Summary</a>
+      <a href="#experience">Experience</a>
+      <a href="#education">Education</a>
+      <a href="#honors">Honors</a>
+      <a href="#contact">Contact</a>
+    </div>
+  </div>
+</nav>
+
+<header class="hero">
+  <div class="wrap">
+    <div class="hero-eyebrow">Currently building at ScottishPower · Data &amp; AI CoE</div>
+    <h1>Nasir Arafat</h1>
+    <p class="role">Big Data Engineer<span class="sep">/</span>Data Architect<span class="sep">/</span>Data Governance<span class="sep">/</span>Data &amp; AI Mentor<span class="sep">/</span>British Council GREAT Scholar</p>
+    <div class="cta-row">
+      <a class="btn btn-primary" href="mailto:nasirsam08@gmail.com">Get in touch →</a>
+      <a class="btn btn-ghost" href="https://www.linkedin.com/in/nasir-arafat" target="_blank" rel="noopener">View LinkedIn</a>
+    </div>
+    <div class="hero-flow">
+      <div class="flow-node">raw data</div><div class="flow-line"></div>
+      <div class="flow-node">pipeline</div><div class="flow-line"></div>
+      <div class="flow-node">governance</div><div class="flow-line"></div>
+      <div class="flow-node">insight</div>
+    </div>
+  </div>
+</header>
+
+<section id="summary">
+  <div class="wrap">
+    <div class="sec-head">
+      <span class="sec-num">01 · Profile</span>
+      <h2>Professional summary</h2>
+    </div>
+    <div class="summary">
+      <p><strong>Microsoft Certified Data Engineer</strong> with a background in applying Big Data and analytics to drive innovation and efficiency in the renewable energy sector. Focused on data analytics, technical leadership, and continuously improving data-driven strategy.</p>
+      <p>Ten years of combined industry and academic experience across the data domain, with a track record of implementing advanced analytics solutions and business intelligence tooling — delivering strong data products and building a healthy data culture in service of strategic goals.</p>
+      <p>Active in thought leadership through CDOXUK, Network Group, PyData, and DataNext Europe, and mentors through The Data Lab. A qualified First-Aider, and recipient of the British Council GREAT Scholarship and the King's Award for Voluntary Service.</p>
+    </div>
+    <div class="contact-card">
+      <div class="contact-item">
+        <div class="label">Email</div>
+        <div class="value"><a href="mailto:nasirsam08@gmail.com">nasirsam08@gmail.com</a></div>
+      </div>
+      <div class="contact-item">
+        <div class="label">Location</div>
+        <div class="value">Glasgow, Scotland, United Kingdom</div>
+      </div>
+      <div class="contact-item">
+        <div class="label">LinkedIn</div>
+        <div class="value"><a href="https://www.linkedin.com/in/nasir-arafat" target="_blank" rel="noopener">/in/nasir-arafat</a></div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section id="expertise">
+  <div class="wrap">
+    <div class="sec-head">
+      <span class="sec-num">02 · Stack</span>
+      <h2>Core technical expertise</h2>
+    </div>
+    <div class="expertise-grid">
+      <div class="expertise-cell">
+        <h3>Data cloud platforms</h3>
+        <p>Azure SQL, Azure Data Factory, Azure Synapse Analytics, AWS Redshift, Data Lake</p>
+      </div>
+      <div class="expertise-cell">
+        <h3>Big data engineering &amp; governance</h3>
+        <p>Synapse, Power BI, MicroStrategy, Informatica, Oracle — advanced analytics &amp; reporting solutions</p>
+      </div>
+      <div class="expertise-cell">
+        <h3>Data architecture &amp; development</h3>
+        <p>Data migration, Azure DevOps Services, data modeling, schema development, end-to-end analytics</p>
+      </div>
+      <div class="expertise-cell">
+        <h3>Data science &amp; AI</h3>
+        <p>Machine learning, predictive analytics, anomaly detection</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section id="experience">
+  <div class="wrap">
+    <div class="sec-head">
+      <span class="sec-num">03 · Track record</span>
+      <h2>Experience</h2>
+    </div>
+
+    <span class="company-tag">ScottishPower — Data SME in CoE · 3 yrs 8 mos</span>
+    <div class="pipeline">
+      <div class="pipe-role">
+        <div class="pipe-dates">April 2023 — Present</div>
+        <h3>Data Engineer — Data &amp; AI, Renewables CoE</h3>
+        <div class="subrole">Big Data Engineer · Data Architect · Data Governance · Cloud &amp; BI Strategist</div>
+      </div>
+      <div class="pipe-role">
+        <div class="pipe-dates">April 2022 — March 2023</div>
+        <h3>Technical Lead — Big Data &amp; Analytics, DigitalHub (UKIT)</h3>
+        <div class="subrole">Leading teams to implement advanced analytics solutions across the organisation</div>
+      </div>
+    </div>
+
+    <div class="achv-grid">
+      <div class="achv-card"><h4>Data leadership</h4><p>Leading a team of data analysts &amp; consultants to implement advanced analytics &amp; reporting solutions.</p></div>
+      <div class="achv-card"><h4>Analytics &amp; governance</h4><p>Supporting BI &amp; governance tooling — Synapse, Power BI, Fabric, MicroStrategy, Informatica — for stakeholders.</p></div>
+      <div class="achv-card"><h4>Process automation</h4><p>Improving KPI implementation to drive best value and streamline processes through automation.</p></div>
+      <div class="achv-card"><h4>Self-service analytics</h4><p>Developing concepts that improve efficiency, such as self-serve reporting and analytics.</p></div>
+      <div class="achv-card"><h4>Data &amp; AI literacy</h4><p>Advocating data literacy through microsites and training as part of the digital engagement strategy.</p></div>
+      <div class="achv-card"><h4>Agile leadership</h4><p>Leading stand-ups and participating in project scrums under Agile development methodologies.</p></div>
+    </div>
+
+    <div style="margin-top:64px;">
+      <span class="company-tag">Mordor Intelligence — Data Science Excellence · 4 yrs 11 mos</span>
+      <div class="pipeline">
+        <div class="pipe-role">
+          <div class="pipe-dates">September 2020 — March 2022</div>
+          <h3>Data Scientist &amp; Process Analyst</h3>
+          <ul>
+            <li>Led data science projects including an anomaly detection engine and a lead classifier engine</li>
+            <li>Scouted technological solutions and finalised optimal approaches for projects</li>
+            <li>Assisted team leads in setting up design, architecture, and execution steps</li>
+            <li>Set up training documents and monitoring mechanisms to evaluate progress</li>
+          </ul>
+        </div>
+        <div class="pipe-role">
+          <div class="pipe-dates">September 2018 — September 2020</div>
+          <h3>Data Scientist</h3>
+          <ul>
+            <li>Built predictive models using historical data to forecast business performance</li>
+            <li>Mapped the customer journey end-to-end and suggested improvements</li>
+            <li>Produced and tracked performance metrics across all organisational levels</li>
+            <li>Led objective-oriented mini-projects with direct revenue impact</li>
+          </ul>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section id="speaking">
+  <div class="wrap">
+    <div class="sec-head">
+      <span class="sec-num">04 · Community</span>
+      <h2>Speaking at data panels &amp; roundtables</h2>
+    </div>
+    <div class="gallery">
+      <div class="gal-item">
+        <img src="https://imgproxy.gamma.app/resize/quality:80/resizing_type:fit/width:800/https://cdn.gamma.app/3k2ktzle57omykn/7dd0d8ac5648451ba7d420dffa9bb211/original/nasir_datanext.jpeg" alt="DataNext Architecture Europe panel" loading="lazy">
+        <div class="gal-cap">DataNext Architecture Europe — Panel</div>
+      </div>
+      <div class="gal-item">
+        <img src="https://imgproxy.gamma.app/resize/quality:80/resizing_type:fit/width:800/https://cdn.gamma.app/3k2ktzle57omykn/ccf2ad519a6645bca7e1fda1c7534431/original/1686072789275.jpg" alt="CDO Network UK roundtable" loading="lazy">
+        <div class="gal-cap">CDO Network UK — Roundtable on Data Governance</div>
+      </div>
+      <div class="gal-item">
+        <img src="https://imgproxy.gamma.app/resize/quality:80/resizing_type:fit/width:800/https://cdn.gamma.app/3k2ktzle57omykn/dd7be46314c84e7f82bb8adb5ab2ee32/original/1654971413870.jpg" alt="Datakirk panel on data literacy" loading="lazy">
+        <div class="gal-cap">Datakirk Panel on Data Literacy</div>
+      </div>
+      <div class="gal-item">
+        <img src="https://imgproxy.gamma.app/resize/quality:80/resizing_type:fit/width:800/https://cdn.gamma.app/3k2ktzle57omykn/ac53e8ea14f440cba0741829286a1e89/original/CDO_pic.jpg" alt="CDOX panel on data governance" loading="lazy">
+        <div class="gal-cap">CDOX Panel on Data Governance</div>
+      </div>
+      <div class="gal-item">
+        <img src="https://imgproxy.gamma.app/resize/quality:80/resizing_type:fit/width:800/https://cdn.gamma.app/3k2ktzle57omykn/bda7ee2930d14689b21dcb07e99fa6f6/original/Pydata.jfif" alt="PyData Glasgow session" loading="lazy">
+        <div class="gal-cap">PyData Glasgow — scalable ETL pipelines with Azure Synapse &amp; PySpark</div>
+      </div>
+      <div class="gal-item">
+        <img src="https://imgproxy.gamma.app/resize/quality:80/resizing_type:fit/width:800/https://cdn.gamma.app/3k2ktzle57omykn/73f131586cf44f7d9afaf7af6e68cd31/original/datanextengineering.jfif" alt="DataNext Conference talk" loading="lazy">
+        <div class="gal-cap">DataNext Conference — "From Governance to Readiness"</div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section id="career-timeline">
+  <div class="wrap">
+    <div class="sec-head">
+      <span class="sec-num">05 · Progression</span>
+      <h2>Career progression timeline</h2>
+    </div>
+    <div class="timeline">
+      <div class="tl-item">
+        <div class="tl-year">2013 – 2014</div>
+        <div><h4>Software Engineer — Intern</h4><p>Summer internships at HCL Technologies and Jamia Hamdard.</p></div>
+      </div>
+      <div class="tl-item">
+        <div class="tl-year">2017 – 2018</div>
+        <div><h4>Data Analysis</h4><p>Data &amp; Business Analyst at Mordor Intelligence.</p></div>
+      </div>
+      <div class="tl-item">
+        <div class="tl-year">2018 – 2022</div>
+        <div><h4>Data Science &amp; Analytics</h4><p>Data Scientist &amp; Process Analyst roles at Mordor Intelligence.</p></div>
+      </div>
+      <div class="tl-item">
+        <div class="tl-year">2022 – Present</div>
+        <div><h4>Data Engineer</h4><p>Leading Big Data &amp; Analytics at ScottishPower CoE.</p></div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section id="education">
+  <div class="wrap">
+    <div class="sec-head">
+      <span class="sec-num">06 · Education</span>
+      <h2>Education &amp; qualifications</h2>
+    </div>
+    <div class="card-list">
+      <div class="edu-card">
+        <div>
+          <h3>University of Stirling</h3>
+          <div class="deg">Master of Science</div>
+          <div class="field">Big Data (Computing Science &amp; Mathematics)</div>
+        </div>
+        <div class="yr">2015 – 2016</div>
+      </div>
+      <div class="edu-card">
+        <div>
+          <h3>Coventry University</h3>
+          <div class="deg">British Council Global Leaders Programme</div>
+          <div class="field">Leadership and Strategies for Managers and Entrepreneurs</div>
+        </div>
+        <div class="yr">2021</div>
+      </div>
+      <div class="edu-card">
+        <div>
+          <h3>Jamia Hamdard</h3>
+          <div class="deg">Bachelor of Technology</div>
+          <div class="field">Information Technology</div>
+        </div>
+        <div class="yr">2011 – 2015</div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section id="certifications">
+  <div class="wrap">
+    <div class="sec-head">
+      <span class="sec-num">07 · Credentials</span>
+      <h2>Certifications &amp; professional development</h2>
+    </div>
+    <div class="cert-grid">
+      <div class="cert-card"><h4>Amazon Redshift Essentials</h4><p>Advanced data warehousing and analytics on the AWS platform.</p></div>
+      <div class="cert-card"><h4>Azure Synapse Analytics</h4><p>Introduction to Microsoft Azure Synapse Analytics.</p></div>
+      <div class="cert-card"><h4>Data Engineering Foundations</h4><p>Core principles and best practices in data engineering.</p></div>
+      <div class="cert-card"><h4>AWS Essential Training</h4><p>AWS Essential Training for Developers.</p></div>
+      <div class="cert-card"><h4>Microsoft Certified Data Engineer</h4><p>Azure Data Engineer certification.</p></div>
+      <div class="cert-card"><h4>Big Data Analytics Conference</h4><p>Whitehall Media Big Data Analytics Europe Conference.</p></div>
+    </div>
+  </div>
+</section>
+
+<section id="honors">
+  <div class="wrap">
+    <div class="sec-head">
+      <span class="sec-num">08 · Recognition</span>
+      <h2>Honors &amp; recognition</h2>
+    </div>
+    <div class="honor-list">
+      <div class="honor-item">
+        <div class="honor-mark">01</div>
+        <div><h4>British Council GREAT Scholarship Award</h4><p>Prestigious scholarship recipient for academic excellence, 2015–16.</p></div>
+      </div>
+      <div class="honor-item">
+        <div class="honor-mark">02</div>
+        <div><h4>King's Award for Voluntary Service</h4><p>MBE-equivalent recognition — the highest award given to UK volunteer groups.</p></div>
+      </div>
+      <div class="honor-item">
+        <div class="honor-mark">03</div>
+        <div><h4>Annual Appreciation Award</h4><p>Recognised for exceptional collaboration and teamwork.</p></div>
+      </div>
+      <div class="honor-item">
+        <div class="honor-mark">04</div>
+        <div><h4>Superior Performer</h4><p>Acknowledged for outstanding performance and contributions.</p></div>
+      </div>
+      <div class="honor-item">
+        <div class="honor-mark">05</div>
+        <div><h4>Credit in Science</h4><p>Academic recognition for excellence in scientific studies.</p></div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<footer id="contact">
+  <div class="wrap">
+    <div class="footer-cta">
+      <h2>Let's talk data.</h2>
+      <p>Open to conversations on data architecture, governance, and building teams that turn raw data into reliable decisions.</p>
+      <div class="cta-row">
+        <a class="btn btn-primary" href="mailto:nasirsam08@gmail.com">Contact me →</a>
+        <a class="btn btn-ghost" href="https://www.linkedin.com/in/nasir-arafat" target="_blank" rel="noopener">Connect on LinkedIn</a>
+      </div>
+    </div>
+    <div class="footer-bottom">
+      <span>© <span id="year"></span> Nasir Arafat · Glasgow, Scotland</span>
+      <span>Built as a static, freely-hostable site</span>
+    </div>
+  </div>
+</footer>
+
+<script>
+  document.getElementById('year').textContent = new Date().getFullYear();
+</script>
+</body>
+</html>
